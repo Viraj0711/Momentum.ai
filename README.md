@@ -13,9 +13,9 @@ Momentum listens to meetings, understands context, identifies decisions, assigns
 * [Problem Statement](#-problem-statement)
 * [Solution Overview](#-solution-overview)
 * [Core Features](#-core-features)
-* [Technical Architecture](#%EF%B8%8F-technical-architecture)
-* [Technology Stack](#%EF%B8%8F-technology-stack)
-* [How It Works](#%EF%B8%8F-how-it-works)
+* [Technical Architecture](#-technical-architecture)
+* [Technology Stack](#-technology-stack)
+* [How It Works](#-how-it-works)
 * [Use Cases](#-use-cases)
 * [Installation & Setup](#-installation--setup)
 * [API Documentation](#-api-documentation)
@@ -118,9 +118,9 @@ Momentum is built as a scalable, cloud-native system.
 ### High-Level Overview
 
 * **Frontend**: React + TypeScript
-* **Backend**: FastAPI (Python)
-* **AI Pipeline**: Whisper, Pyannote, LLMs
-* **Async Processing**: Celery + Redis
+* **Backend**: Node.js + Express/NestJS
+* **AI Pipeline**: Whisper, OpenAI APIs, LLMs
+* **Async Processing**: Bull Queue + Redis
 * **Storage**: PostgreSQL + S3
 * **Integrations**: REST & GraphQL APIs
 
@@ -137,15 +137,15 @@ Momentum is built as a scalable, cloud-native system.
 
 ### Backend
 
-* Python 3.11
-* FastAPI
-* OpenAI Whisper
-* Pyannote.audio
-* spaCy & Transformers
-* LangChain
+* Node.js 20+
+* Express.js / NestJS
+* TypeScript
+* OpenAI API
+* LangChain.js
+* Prisma ORM
 * PostgreSQL
 * Redis
-* Celery
+* Bull Queue
 
 ### Frontend
 
@@ -225,8 +225,8 @@ Postmortems, root cause analysis, prevention planning.
 
 ### Prerequisites
 
-* Python 3.11+
-* Node.js 18+
+* Node.js 20+
+* npm or yarn
 * PostgreSQL 14+
 * Redis 7+
 * Docker (recommended)
@@ -235,8 +235,8 @@ Postmortems, root cause analysis, prevention planning.
 
 ```bash
 cd backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+npm install
+npm run dev
 ```
 
 ### Frontend Setup
